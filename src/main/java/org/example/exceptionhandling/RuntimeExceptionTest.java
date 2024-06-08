@@ -7,6 +7,8 @@ public class RuntimeExceptionTest {
 
     public static void main(String[] args) {
 
+        /** RuntimeException의 하위 클래스 */
+
         /** NullPointException : 객체가 null 일때 해당 객체의 멤버를 참조하려고 할 때 발생 */
         int[] intArr = null;
         try {
