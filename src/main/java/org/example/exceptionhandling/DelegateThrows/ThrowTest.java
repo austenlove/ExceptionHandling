@@ -1,4 +1,4 @@
-package org.example.exceptionhandling.delegate;
+package org.example.exceptionhandling.DelegateThrows;
 
 import java.io.IOException;
 

@@ -1,6 +1,6 @@
-package org.example.exceptionhandling.trycatch;
+package org.example.exceptionhandling.TryCatch;
 
-import org.example.exceptionhandling.delegate.ThrowTest;
+import org.example.exceptionhandling.DelegateThrows.ThrowTest;
 
 import java.io.IOException;
 
