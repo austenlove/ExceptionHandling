@@ -1,4 +1,4 @@
-package org.example.exceptionhandling;
+package org.example.exceptionhandling.Exceptions;
 
 public class RuntimeExceptionTest {
 
