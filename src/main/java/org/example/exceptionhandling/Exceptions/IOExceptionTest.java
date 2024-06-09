@@ -17,38 +17,16 @@ public class IOExceptionTest {
 
     public static void main(String[] args) {
 
-        // 파일 읽기 예제
+        BufferedWriter writer = null;
         BufferedReader reader = null;
-        try {
-            reader = new BufferedReader(new FileReader("example.txt"));
-            String line;
-
-            while ((line = reader.readLine()) != null) {
-                System.out.println(line);
-            }
-
-        } catch (IOException e) {
-            System.out.println("파일을 읽는 도중 오류 발생: " + e.getMessage());
-
-        } finally {
-            try {
-                if (reader != null) {
-                    reader.close();
-                }
-            } catch (IOException ex) {
-                System.out.println("파일을 닫는 도중 오류 발생: " + ex.getMessage());
-            }
-
-        }
 
         // 파일 쓰기 예제
-        BufferedWriter writer = null;
         try {
             writer = new BufferedWriter(new FileWriter("output.txt"));
             writer.write("Hello World");
 
         } catch (IOException e) {
-            System.out.println("파일을 쓰는 도중 오류 발생: " + e.getMessage());
+            System.out.println("🚫파일을 쓰는 도중 오류 발생: " + e.getMessage());
 
         } finally {
             try {
@@ -56,23 +34,22 @@ public class IOExceptionTest {
                     writer.close();
                 }
             } catch (IOException ex) {
-                System.out.println("파일을 닫는 도중 오류 발생: " + ex.getMessage());
+                System.out.println("🚫파일을 닫는 도중 오류 발생: " + ex.getMessage());
             }
 
         }
 
-        // 스트림에서 데이터 읽기 예제
+        // 파일 읽기 예제
         try {
-            reader = new BufferedReader(new FileReader("example.txt"));
+            reader = new BufferedReader(new FileReader("output.txt"));
             String line;
 
-            // 파일 한 줄씩 읽기
             while ((line = reader.readLine()) != null) {
                 System.out.println(line);
             }
 
         } catch (IOException e) {
-            System.out.println("파일을 읽는 도중 오류 발생: " + e.getMessage());
+            System.out.println("🚫파일을 읽는 도중 오류 발생: " + e.getMessage());
 
         } finally {
             try {
@@ -80,9 +57,9 @@ public class IOExceptionTest {
                     reader.close();
                 }
             } catch (IOException ex) {
-                System.out.println("파일을 닫는 도중 오류 발생: " + ex.getMessage());
-
+                System.out.println("🚫파일을 닫는 도중 오류 발생: " + ex.getMessage());
             }
+
         }
 
         // 스트림에서 데이터 쓰기 예제
@@ -93,7 +70,7 @@ public class IOExceptionTest {
             writer.write("Java File IO Example");
 
         } catch (IOException e) {
-            System.out.println("파일을 쓰는 도중 오류 발생: " + e.getMessage());
+            System.out.println("🚫파일을 쓰는 도중 오류 발생: " + e.getMessage());
 
         } finally {
             try {
@@ -101,9 +78,34 @@ public class IOExceptionTest {
                     writer.close();
                 }
             } catch (IOException ex) {
-                System.out.println("파일을 닫는 도중 오류 발생: " + ex.getMessage());
+                System.out.println("🚫파일을 닫는 도중 오류 발생: " + ex.getMessage());
             }
         }
+
+        // 스트림에서 데이터 읽기 예제
+        try {
+            reader = new BufferedReader(new FileReader("example.txt"));   //에러 발생
+            String line;
+
+            // 파일 한 줄씩 읽기
+            while ((line = reader.readLine()) != null) {
+                System.out.println(line);
+            }
+
+        } catch (IOException e) {
+            System.out.println("🚫파일을 읽는 도중 오류 발생: " + e.getMessage());
+
+        } finally {
+            try {
+                if (reader != null) {
+                    reader.close();
+                }
+            } catch (IOException ex) {
+                System.out.println("🚫파일을 닫는 도중 오류 발생: " + ex.getMessage());
+
+            }
+        }
+
 
         /** 예외 처리 패턴
          *  try 블록에서 I/O 작업을 수행
